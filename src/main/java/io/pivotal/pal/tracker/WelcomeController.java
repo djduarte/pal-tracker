@@ -1,18 +1,20 @@
 package io.pivotal.pal.tracker;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class WelcomeController {
 
-    @GetMapping("/")
-    public String sayHello(){
-        return "hello";
+    private final String welcomeMessage;
+
+    public WelcomeController(@Value("${welcome.message}") String welcomeMessage) {
+        this.welcomeMessage = welcomeMessage;
     }
 
-    @GetMapping("/test")
-    public String test(){
-        return "hello2";
+    @GetMapping("/")
+    public String sayHello() {
+        return welcomeMessage;
     }
 }
