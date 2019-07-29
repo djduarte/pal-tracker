@@ -10,4 +10,9 @@ public class WelcomeController {
     public String sayHello(){
         return "hello";
     }
+
+    @GetMapping("/test")
+    public String test(){
+        return "hello2";
+    }
 }
