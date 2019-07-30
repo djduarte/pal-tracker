@@ -28,11 +28,11 @@ public class TimeEntryController {
 
         TimeEntry timeEntry = this.timeEntryRepository.find(id);
 
-        if (timeEntry != null) {
-            return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.OK);
+        if (timeEntry == null) {
+            return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.OK);
 
     }
 
@@ -46,11 +46,11 @@ public class TimeEntryController {
 
         TimeEntry timeEntry = this.timeEntryRepository.update(id, expected);
 
-        if (timeEntry != null) {
-            return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.OK);
+        if (timeEntry == null) {
+            return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.NOT_FOUND);
         }
 
-        return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<TimeEntry>(timeEntry, HttpStatus.OK);
 
     }
 

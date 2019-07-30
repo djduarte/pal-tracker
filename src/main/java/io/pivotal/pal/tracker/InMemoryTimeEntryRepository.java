@@ -26,7 +26,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
     @Override
     public TimeEntry find(long timeEntryId) {
 
-        for (TimeEntry t : timeEntryList) {
+       for (TimeEntry t : timeEntryList) {
             if (t.getId() == timeEntryId) {
                 return t;
             }
