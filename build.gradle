@@ -39,7 +39,7 @@ bootRun.environment([
 ])
 
 test.environment([
-        "WELCOME_MESSAGE"  : "Hello from test",
+            "WELCOME_MESSAGE"  : "Hello from test",
         "PORT"             : "8675",
         "MEMORY_LIMIT"     : "12G",
         "CF_INSTANCE_INDEX": "34",
