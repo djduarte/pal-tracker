@@ -12,14 +12,6 @@ public class TimeEntry {
     private final int hours;
 
 
-    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
-        this.projectId = projectId;
-        this.userId = userId;
-        this.date = date;
-        this.hours = hours;
-        id = 0;
-    }
-
     public TimeEntry(long id, long projectId, long userId, LocalDate date, int hours) {
         this.id = id;
         this.projectId = projectId;
@@ -28,13 +20,13 @@ public class TimeEntry {
         this.hours = hours;
     }
 
+    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
+        this(0, projectId, userId, date, hours);
+    }
+
     public TimeEntry() {
 
-        this.id = 0;
-        this.projectId = 0;
-        this.userId = 0;
-        this.date = null;
-        this.hours = 0;
+        this(0, 0, 0, null, 0);
     }
 
     public TimeEntry(TimeEntry timeEntry, long lastId) {

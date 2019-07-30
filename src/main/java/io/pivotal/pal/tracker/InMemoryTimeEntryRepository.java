@@ -14,6 +14,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         this.timeEntryList = new ArrayList<>();
     }
 
+    @Override
     public TimeEntry create(TimeEntry timeEntry) {
 
         TimeEntry newTimeEntry = new TimeEntry(timeEntry, this.lastId);
@@ -22,6 +23,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         return newTimeEntry;
     }
 
+    @Override
     public TimeEntry find(long timeEntryId) {
 
         for (TimeEntry t : timeEntryList) {
@@ -34,10 +36,12 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
 
     }
 
+    @Override
     public List<TimeEntry> list() {
         return this.timeEntryList;
     }
 
+    @Override
     public TimeEntry update(long timeEntryId, TimeEntry timeEntry) {
 
         TimeEntry result = this.find(timeEntryId);
@@ -53,6 +57,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository{
         return null;
     }
 
+    @Override
     public void delete(long timeEntryId) {
 
         TimeEntry result = this.find(timeEntryId);
