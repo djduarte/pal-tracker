@@ -12,8 +12,12 @@ public class TimeEntryController {
 
     TimeEntryRepository timeEntryRepository;
 
-    public TimeEntryController(TimeEntryRepository timeEntryRepository) {
-        this.timeEntryRepository = timeEntryRepository;
+//    public TimeEntryController(TimeEntryRepository inMemoryTimeEntryRepository) {
+//        this.timeEntryRepository = inMemoryTimeEntryRepository;
+//    }
+
+    public TimeEntryController(TimeEntryRepository jdbcTimeEntryRepository) {
+        this.timeEntryRepository = jdbcTimeEntryRepository;
     }
 
     @PostMapping
