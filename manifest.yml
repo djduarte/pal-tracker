@@ -8,4 +8,3 @@ applications:
     env:
       WELCOME_MESSAGE: Hello from the review environment
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ } }'
-      SPRING_DATASOURCE_URL: 'jdbc:mysql://q-n3s3y1.q-g17151.bosh:3306/service_instance_db?user=728fb9272903486aacc23a83ad92c3f4&password=0krg8uqumyxs4nof&useSSL=false'
